@@ -22,7 +22,7 @@ publishing {
 	
 //	name 'nexus'
 	if(project.version.endsWith('-SNAPSHOT')) {
-	url "http://3.110.216.191:8081/repository/maven-snapshots/"
+		url "http://3.110.216.191:8081/repository/maven-snapshots/"
 	}
 	else {
 		url "http://3.110.216.191:8081/repository/maven-releases/"
