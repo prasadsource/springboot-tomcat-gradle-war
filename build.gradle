@@ -4,7 +4,33 @@ plugins {
     id 'java'
     id 'war'
     id "org.sonarqube" version "3.3"
+	id "maven-publish"
 }
+
+publishing {
+	
+	publications {
+	
+	maven(MavenPublication) {
+		//bootJar is the default build task configured by spring boot
+		artifact bootJar
+	}}
+	
+	repositories {
+	
+	maven {
+	
+	name 'nexus'
+	
+	url "http://3.110.216.191:8081/repository/maven-snapshots/"
+	
+	credentials {
+	
+	username admin
+	
+	password admin123
+	
+	}}}}
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
