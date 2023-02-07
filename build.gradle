@@ -37,7 +37,7 @@ plugins {
 	
 	
 	}*/
-	
+afterEvaluate {project ->
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
@@ -58,7 +58,7 @@ publishing {
 		}
 	}
 }
-	
+}
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
