@@ -78,8 +78,8 @@ publishing {
 			}
 		credentials {
 		
-		username "admin"
-		password "admin123"
+		username project.repoUser
+		password project.repoPassword
 		
 		}
 		
