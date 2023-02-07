@@ -37,7 +37,6 @@ plugins {
 	
 	
 	}*/
-afterEvaluate {project ->
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
@@ -49,7 +48,7 @@ publishing {
 		maven {
 			credentials {
 				username 'admin'
-				password 'admin123!'
+				password 'admin123'
 			}
 			name 'Nexus_Repo'
 			  def releasesRepoUrl = "http://3.110.216.191:8081/repository/maven-releases/"
@@ -57,7 +56,6 @@ publishing {
 			url = project.version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 		}
 	}
-}
 }
 
 group = 'com.example'
