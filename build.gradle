@@ -30,7 +30,7 @@ plugins {
 }*/
 
 group = 'com.example'
-version = '0.0.1'
+version = '0.0.2'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -55,34 +55,36 @@ sonarqube {
                 property "sonar.login", "6d7dcd10b8b2943128d0f7c5db306bf5aa723aa6"
     }
 
-	publishing {
-		
-		publications {
-		
-		maven(MavenPublication) {
-			//bootJar is the default build task configured by spring boot
-			artifact bootJar
-		}}
-		
-		repositories {
-		
-			maven {
-				if(project.version.endsWith('-SNAPSHOT')) {
-					url "http://3.110.216.191:8081/repository/maven-snapshots/"
-				}
-				else {
-					url "http://3.110.216.191:8081/repository/maven-releases/"
-				}
-			credentials {
-			
-			username "admin"
-			password "admin123"
-			
-			}
-			
-			}
-		}
-		
-		
-		}
+	
 }
+
+publishing {
+	
+	publications {
+	
+	maven(MavenPublication) {
+		//bootJar is the default build task configured by spring boot
+		artifact bootJar
+	}}
+	
+	repositories {
+	
+		maven {
+			if(project.version.endsWith('-SNAPSHOT')) {
+				url "http://3.110.216.191:8081/repository/maven-snapshots/"
+			}
+			else {
+				url "http://3.110.216.191:8081/repository/maven-releases/"
+			}
+		credentials {
+		
+		username "admin"
+		password "admin123"
+		
+		}
+		
+		}
+	}
+	
+	
+	}
