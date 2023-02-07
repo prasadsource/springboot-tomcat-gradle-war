@@ -7,7 +7,7 @@ plugins {
 	id "maven-publish"
 }
 
-/*publishing {
+publishing {
 	
 	publications {
 	
@@ -36,10 +36,10 @@ plugins {
 	}
 	
 	
-	}*/
-publishing {
+	}
+/*publishing {
 	publications {
-		mavenJava(MavenPublication) {
+		maven(MavenPublication) {
 			//bootJar is the default build task configured by spring boot
 			artifact bootJar
 		}
@@ -51,12 +51,12 @@ publishing {
 				password 'admin123'
 			}
 			name 'Nexus_Repo'
-			  def releasesRepoUrl = "http://3.110.216.191:8081/repository/maven-releases/"
+			def releasesRepoUrl =  "http://3.110.216.191:8081/repository/maven-releases/"
 			def snapshotsRepoUrl = "http://3.110.216.191:8081/repository/maven-snapshots/"
 			url = project.version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 		}
 	}
-}
+}*/
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
